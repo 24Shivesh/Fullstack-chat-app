@@ -11,23 +11,21 @@ const MessageInput = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    if(!file.type.startsWith("image/")) {
-      toast.error("Please select a valid image file.");
+    if (!file.type.startsWith("image/")) {
+      toast.error("Please select an image file");
       return;
-    };
+    }
 
     const reader = new FileReader();
     reader.onloadend = () => {
-        setImagePreview(reader.result);
+      setImagePreview(reader.result);
     };
     reader.readAsDataURL(file);
-};
-
+  };
 
   const removeImage = () => {
     setImagePreview(null);
-    if (fileInputRef.current)  fileInputRef.current.value = ""; // Reset the file input
-    
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   const handleSendMessage = async (e) => {
