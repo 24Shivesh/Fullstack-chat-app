@@ -1,17 +1,17 @@
+import  authVisual  from "../assets/Whisprr.png";
+ // Adjust path if needed
+
 const AuthVisualPanel = ({ title, subtitle }) => {
   return (
     <div className="hidden lg:flex items-center justify-center bg-base-300 p-12">
       <div className="max-w-md text-center">
-        {/* Pattern Grid */}
-        <div className="grid grid-cols-4 gap-2 mb-8">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className={`aspect-square rounded-xl ${
-                i % 3 === 0 ? "bg-primary/20 animate-pulse" : "bg-primary/10"
-              }`}
-            />
-          ))}
+        {/* Local Image */}
+        <div className="mb-8">
+          <img
+            src={authVisual}
+            alt="Authentication Visual"
+            className="w-48 h-48 object-cover mx-auto rounded-2xl shadow-lg"
+          />
         </div>
 
         {/* Title & Subtitle */}
